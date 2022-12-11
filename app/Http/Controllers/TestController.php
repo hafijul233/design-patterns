@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Interfaces\SettingInterface;
 use App\Singletons\Setting;
 
-class SettingTestController extends Controller
+class TestController extends Controller
 {
     public function __construct(public SettingInterface $setting)
     {

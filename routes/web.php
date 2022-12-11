@@ -26,4 +26,4 @@ Route::get('dashboard', function (Request $request) {
     dd(\App\Singletons\Setting::instance()->all());
 });
 
-Route::get('singleton-test', [\App\Http\Controllers\SettingTestController::class, 'test']);
+Route::get('singleton-test', [\App\Http\Controllers\TestController::class, 'test']);

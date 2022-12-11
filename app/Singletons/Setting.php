@@ -24,11 +24,6 @@ class Setting implements SettingInterface
         return self::$instance;
     }
 
-    private function __clone(): void
-    {
-
-    }
-
     public function __get(string $name): mixed
     {
         return $this->attributes[$name] ?? null;

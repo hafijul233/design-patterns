@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreCustomerRequest;
-use App\Http\Requests\UpdateCustomerRequest;
+use App\Http\Requests\StorePaymentRequest;
+use App\Http\Requests\UpdatePaymentRequest;
 use App\Models\Customer;
 use App\Repositories\Interface\PaymentRepositoryInterface;
 use Illuminate\Http\Response;
@@ -38,10 +38,10 @@ class PaymentController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param StoreCustomerRequest $request
+     * @param StorePaymentRequest $request
      * @return Response
      */
-    public function store(StoreCustomerRequest $request)
+    public function store(StorePaymentRequest $request)
     {
         return $this->payment->store($request->all());
     }
@@ -72,10 +72,10 @@ class PaymentController extends Controller
      * Update the specified resource in storage.
      *
      * @param $id
-     * @param UpdateCustomerRequest $request
+     * @param UpdatePaymentRequest $request
      * @return Response
      */
-    public function update($id, UpdateCustomerRequest $request)
+    public function update($id, UpdatePaymentRequest $request)
     {
         return $this->payment->update($id, $request->all());
     }

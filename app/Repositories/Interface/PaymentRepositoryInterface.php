@@ -2,8 +2,8 @@
 
 namespace App\Repositories\Interface;
 
-use App\Http\Requests\StoreCustomerRequest;
-use App\Http\Requests\UpdateCustomerRequest;
+use App\Http\Requests\StorePaymentRequest;
+use App\Http\Requests\UpdatePaymentRequest;
 use App\Models\Customer;
 use Illuminate\Http\Response;
 

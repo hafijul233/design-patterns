@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+});
+
+Route::get('login', function () {
+
+    \Illuminate\Support\Facades\Auth::attempt(['email' => 'test@example.com', 'password' => 'password']);
+
+    return redirect()->to('dashboard');
+});
+
+Route::get('dashboard', function (Request $request) {
+    dd(\App\Singletons\Setting::instance()->all());
 });

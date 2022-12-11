@@ -2,7 +2,9 @@
 
 namespace App\Singletons;
 
-class Setting
+use App\Interfaces\SettingInterface;
+
+class Setting implements SettingInterface
 {
     private array $attributes = [];
 
@@ -10,9 +12,7 @@ class Setting
 
     private function __construct()
     {
-        $user = request()->user();
         \App\Models\Setting::enabled()
-            ->where('user_id', '=', $user->id)
             ->each(fn($setting) => $this->{$setting->name} = $setting->value);
     }
 

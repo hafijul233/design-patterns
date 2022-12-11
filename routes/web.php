@@ -18,12 +18,12 @@ Route::get('/', function () {
 });
 
 Route::get('login', function () {
-
     \Illuminate\Support\Facades\Auth::attempt(['email' => 'test@example.com', 'password' => 'password']);
-
     return redirect()->to('dashboard');
 });
 
 Route::get('dashboard', function (Request $request) {
     dd(\App\Singletons\Setting::instance()->all());
 });
+
+Route::get('singleton-test', [\App\Http\Controllers\SettingTestController::class, 'test']);
